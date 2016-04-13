@@ -1,0 +1,8 @@
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\obj\Debug\commonpersistence.csprojResolveAssemblyReference.cache
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\bin\Debug\commonpersistence.exe.config
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\bin\Debug\commonpersistence.exe
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\bin\Debug\commonpersistence.pdb
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\bin\Debug\Dapper.dll
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\bin\Debug\Dapper.xml
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\obj\Debug\commonpersistence.exe
+C:\Camilo\Personal\Tests\Microservices\MicroserviceServiceFabric\myservices\commonpersistence\obj\Debug\commonpersistence.pdb

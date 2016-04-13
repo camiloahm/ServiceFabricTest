@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="myservicesType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+   <Parameters>
+      <Parameter Name="mailhandlerservice_MinReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="mailhandlerservice_PartitionCount" DefaultValue="1" />
+      <Parameter Name="mailhandlerservice_TargetReplicaSetSize" DefaultValue="3" />
+      <Parameter Name="commentservice_InstanceCount" DefaultValue="-1" />
+      <Parameter Name="sendemailservice_InstanceCount" DefaultValue="-1" />
+      <Parameter Name="userservice_InstanceCount" DefaultValue="-1" />
+   </Parameters>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="mailhandlerservicePkg" ServiceManifestVersion="1.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="commentservicePkg" ServiceManifestVersion="1.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="sendemailservicePkg" ServiceManifestVersion="1.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="userservicePkg" ServiceManifestVersion="1.0.0" />
+      <ConfigOverrides />
+   </ServiceManifestImport>
+   <DefaultServices>
+      <Service Name="mailhandlerservice">
+         <StatefulService ServiceTypeName="mailhandlerserviceType" TargetReplicaSetSize="[mailhandlerservice_TargetReplicaSetSize]" MinReplicaSetSize="[mailhandlerservice_MinReplicaSetSize]">
+            <UniformInt64Partition PartitionCount="[mailhandlerservice_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+         </StatefulService>
+      </Service>
+      <Service Name="commentservice">
+         <StatelessService ServiceTypeName="commentserviceType" InstanceCount="[commentservice_InstanceCount]">
+            <SingletonPartition />
+         </StatelessService>
+      </Service>
+      <Service Name="sendemailservice">
+         <StatelessService ServiceTypeName="sendemailserviceType" InstanceCount="[sendemailservice_InstanceCount]">
+            <SingletonPartition />
+         </StatelessService>
+      </Service>
+      <Service Name="userservice">
+         <StatelessService ServiceTypeName="userserviceType" InstanceCount="[userservice_InstanceCount]">
+            <SingletonPartition />
+         </StatelessService>
+      </Service>
+   </DefaultServices>
+</ApplicationManifest>
